@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+	<div class="loginform cf">
+<form id="contact-form" method="post" enctype="multipart/form-data" action="processRegister.php">                    
+      <fieldset>
+       <label><span class="text-form">Name*</span><input name="name" type="name" placeholder="Name" /></label>
+         <label><span class="text-form">Email*</span><input name="email" type="email" placeholder="Email" /></label>                              
+           <label><span class="text-form">Password*</span><input name="pwd" type="pwd" placeholder="Password" /></label> 
+            <label><span class="text-form">Confirm Password*</span><input name="pwd" type="password" placeholder="Confirm Password"></label>
+             <input type="radio" name="sex" value="male" checked>Male
+             <br>
+             <input type="radio" name="sex" value="female" >Female
+      </fieldset>	
+		<input type="submit" value="Create Account"/>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <h1>JSON DATABASE TEST</h1>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="courseCtrl">
+     
+<table>
+	<tr ng-repeat="x in names">
+		<td>{{ x.productID }}</td>
+		<td>{{ x.name }}</td>
+		<td>{{ x.price }}</td>
+		<td>{{ x.quantity }}</td>
+	</tr>
+</table>
+
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('courseCtrl', function($scope, $http) {
+	$http.get("http://aid.omobosoftwareinterface.com/JSON-XML/JSON_test.php")
+	.then(function (response) {$scope.names = response.data.records;});
+});
+
+</script>
+</body>
+</html>

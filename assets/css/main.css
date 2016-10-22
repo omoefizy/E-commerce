@@ -1,0 +1,61 @@
+@import url('//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+/* Mimicking a product grid, don't copy that in your theme! */
+.content { width: 100%; margin: 20px auto;margin-right:10px; }
+.span2 { width: 40%; padding: 20px;border:10px black solid; margin-top: 10; float: left; margin-right:10%; }
+.span2 img { max-width: 100%; }
+p { margin: 0.9em 0; }
+.reveal p { margin: 0; }
+body { font-family: Lato, sans-serif; }
+.span2 p { text-align: center; }
+
+/* ===============================================
+// Reveal module
+// =============================================== */
+
+.reveal .hidden { display: block !important; visibility: visible !important; }
+.product:hover .reveal img { opacity: 1; }
+.reveal { position: relative; }
+.reveal .hidden { 
+  position: absolute; 
+  z-index: -1;
+  top: 0; 
+  width: 100%; 
+  height: 100%;  
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;  
+}
+.reveal:hover .hidden { 
+  z-index: 100000;
+  opacity: 1;    
+}
+.reveal .caption {
+  position: absolute;
+  top: 0;  
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* fallback for IE8 */
+  background-color: rgba(255, 255, 255, 0.9);
+  font: 14px/1.6 Lato, sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #777;
+  letter-spacing: 1px;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}
+.reveal .hidden .caption .centered {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media (min-width: 480px) and (max-width: 979px) {
+  .reveal .caption { 
+    font-size: 11px; 
+  }
+  @media screen and (device-aspect-ratio: 16/9) { ... }
+  @media (orientation:portrait) { ... }
+}
